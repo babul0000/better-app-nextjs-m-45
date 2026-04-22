@@ -12,45 +12,33 @@ import {
     TextField,
 } from "@heroui/react";
 
-
-const SingUpPage = () => {
+const SingingPage = () => {
 
     const onSubmit = async(e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
+    const formData = new FormData(e.currentTarget);
     const userData = Object.fromEntries(formData.entries()); 
     console.log("userdata", userData);
 
-    const { data, error } = await authClient.signUp.email({
-    name: userData.name, // required
+   const { data, error } = await authClient.signIn.email({
     email: userData.email, // required
     password: userData.password, // required
+    rememberMe: true,
     callbackURL: "/",
 });
 
+    console.log("sing in response", data, error);
     
-console.log(data, error);
+    
 
-if(error) {
-    alert("error singing up" + error.message);
-}
-if(data) {
-    alert(" singing up successfully");
-}
     }
-
     return (
-        <div>
-            <h1>Sign Up</h1>
-
-            <div className="w-1/2 mx-auto">
+        <div className="w-1/2 mx-auto mt-20">
+            <h2 className="mb-5">please sing in</h2>
+            <div>
                 <Form className="flex w-96 flex-col gap-4" onSubmit={onSubmit}>
 
-                    <TextField isRequired>
-                        <Label>Name</Label>
-                        <Input name="name" placeholder="John Doe" />
-                        <FieldError />
-                    </TextField>
+                    
 
                     <TextField isRequired type="email">
                         <Label>Email</Label>
@@ -84,4 +72,4 @@ if(data) {
     );
 };
 
-export default SingUpPage;
+export default SingingPage;
