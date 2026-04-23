@@ -28,7 +28,7 @@ const SingingPage = () => {
             email: userData.email, // required
             password: userData.password, // required
             rememberMe: true,
-            callbackURL: "/",
+            callbackURL: "/dashboard",
         });
 
         console.log("sing in response", data, error);
