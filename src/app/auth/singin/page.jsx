@@ -56,8 +56,9 @@ const SingingPage = () => {
                         <InputGroup>
                             <InputGroup.Input
                                 className="w-full max-w-[280px]"
+                                name="password"
                                 type={isVisible ? "text" : "password"}
-                                value={isVisible ? "87$2h.3diua" : "••••••••"}
+                                // value={isVisible ? "text" : ""}
                             />
                             <InputGroup.Suffix className="pr-0">
                                 <Button

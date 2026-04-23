@@ -24,13 +24,13 @@ const Navbar = () => {
                 {/* Middle - Links */}
                 <ul className="hidden md:flex items-center gap-6 text-sm">
                     <li>
-                        <Link href="#" className="hover:text-primary transition">
-                            Features
+                        <Link href="/" className="hover:text-primary transition">
+                            Home
                         </Link>
                     </li>
                     <li>
-                        <Link href="#" className="hover:text-primary transition">
-                            Pricing
+                        <Link href="/dashboard" className="hover:text-primary transition">
+                            Dashboard
                         </Link>
                     </li>
                 </ul>
