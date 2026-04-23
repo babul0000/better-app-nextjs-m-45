@@ -86,4 +86,5 @@ if(data) {
 
 
 // hello
+// hello2
 export default SingUpPage;
